@@ -1,0 +1,33 @@
+<html>
+<body>
+
+Hello, {{loginName}}! </br>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<form action="/create-book-input" method="post">
+    <input type="hidden" value="{{id}}" name="bookId"/>
+    <input type="text" placeholder="Book Title" name="enterTitle"/>
+    <input type="text" placeholder="Book Writer" name="enterWriter"/>
+    <input type="text" placeholder="Release Date" name="enterReleaseDate"/>
+    <input type="text" placeholder="Read or Not" name="enterRead"/>
+</form>
+
+<br>
+
+
+</br>
+
+<ol>
+    {{#books}}
+    <li>
+        Title: {{title}}  writer: {{writer}} Published: {{releaseDate}} Read: {{read}}
+        <form action="delete-book" method="post"><input type="hidden" value="{{bookId}}" name="deleteBookId"><button> Delete </button> </form> <a href="/edit-book-input?bookId={{bookId}}"> Edit </a>...<br>
+    </li>
+    {{/books}}
+</ol>
+
+</body>
+</html>

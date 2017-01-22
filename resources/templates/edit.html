@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Edit book input here:
+{{#book}}
+<form action="/edit" method="post">
+    <input type="hidden" value="{{id}}" name="bookId"/>
+    <input type="text" value="{{title}}" name="enterTitle"/>
+    <input type="text" value="{{writer}}" name="enterWriter"/>
+    <input type="text" value="{{releaseDate}}" name="enterReleaseDate"/>
+    <input type="text" value="{{read}}" name="enterRead"/>
+    <button type="submit" >save</button>
+</form>
+
+{{/book}}
+
+</body>
+</html>
